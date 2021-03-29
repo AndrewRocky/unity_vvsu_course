@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -73,6 +74,7 @@ public class DungeonMaster : MonoBehaviour
                         //place it on pointer
                         real_block.transform.position = h_real;
                         all_blocks.Add(new block_info(real_block, cur_block_id));
+                        Debug.Log("There are " + all_blocks.Count.ToString() + "in all_blocks");
                     }
                     else
                     {
@@ -264,32 +266,47 @@ public class DungeonMaster : MonoBehaviour
         }
     }
 
-    //void save_test()
-    //{
-    //    for (int i = 0; i < all_blocks.Count; i++)
-    //    {
-    //        String to_save = "";
-    //        block_info info = all_blocks[i];
-            
-    //        //save type of block
-    //        to_save += info.block_type.ToString() + " ";
-            
-    //        //save xyz coordinates
-    //        Vector3 pos = info.block.transform.localPosition;
-    //        to_save += pos.x + " " + pos.y + " " + pos.z + " ";
+    public void on_save_btn_click()
+    {
+        //rewrite save if already exists
+        string save_path = "Saves\\save.sav";
+        if (File.Exists(save_path))
+        {
+            File.WriteAllText(save_path, "");
+        }
 
-    //        //save xyz in eulerAngles of rotation
-    //        Vector3 rot = info.block.transform.rotation.eulerAngles;
-    //        to_save += rot.x + " " + rot.y + " " + rot.z + " ";
+        //get info about placed blocks from register
+        for (int i = 0; i < all_blocks.Count; i++)
+        {
+            String to_save = "";
+            block_info info = all_blocks[i];
 
-    //        //save rgb of colors
-    //        //Renderer rend = info.block.transform.GetComponent<Renderer>();
-    //        //Color col = rend.material.color;
-    //        //to_save += col.r + " " + col.g + " " + col.b + " ";
+            //save type of block
+            to_save += info.block_type.ToString() + " ";
 
+            //save xyz coordinates
+            Vector3 pos = info.block.transform.localPosition;
+            to_save += pos.x + " " + pos.y + " " + pos.z + " ";
 
+            //save xyz in eulerAngles of rotation
+            Vector3 rot = info.block.transform.rotation.eulerAngles;
+            to_save += rot.x + " " + rot.y + " " + rot.z + " ";
 
+            //save xyz scale
+            Vector3 scl = info.block.transform.localScale;
+            to_save += scl.x + " " + scl.y + " " + scl.z + " ";
 
-    //    }
-    //}
+            //save rgb of colors
+            Renderer rend = info.block.transform.GetComponent<Renderer>();
+            Color col = rend.material.color;
+            to_save += col.r + " " + col.g + " " + col.b + " ";
+
+            //add new_line character
+            to_save += Environment.NewLine;
+
+            //add block info to file as a single line
+            File.AppendAllText(save_path, to_save);
+
+        }
+    }
 }
