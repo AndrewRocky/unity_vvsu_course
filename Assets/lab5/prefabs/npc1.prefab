@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2743318625465789944}
   - component: {fileID: 4353486465581518387}
   - component: {fileID: 6241052529021766593}
+  - component: {fileID: -2608907831262394332}
+  - component: {fileID: -1194139096099495046}
   m_Layer: 0
   m_Name: npc1
   m_TagString: Untagged
@@ -109,3 +111,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9021041211389734b91d456a99d96467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kill_counter: {fileID: 0}
+--- !u!195 &-2608907831262394332
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326662350945835390}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &-1194139096099495046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326662350945835390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4353ca288c94f8642ad98a85d9ce6bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet_prefab: {fileID: 3630035786008853036, guid: 4f67695577368314f99b6b7aa0f67e0e, type: 3}
+  bullet_speed: 60

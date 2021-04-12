@@ -4,6 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 
+
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
@@ -89,6 +90,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             shoot_rmb();
             shoot_lmb();
+
         }
 
         private void shoot_rmb()
@@ -111,6 +113,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 shot.GetComponent<Rigidbody>().AddForce(dir * m_BoxSpeed);
             }
         }
+
 
         private void PlayLandingSound()
         {

@@ -57,11 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\ProjectManager.cs" />
+    <Compile Include="Assets\lab5\scripts\HitScript.cs" />
+    <Compile Include="Assets\lab5\scripts\DungeonMaster_5.cs" />
     <Compile Include="Assets\Resources\scripts\DungeonMaster.cs" />
     <Compile Include="Assets\scripts\color_change.cs" />
     <Compile Include="Assets\scripts\mycube_rot_speed1.cs" />
     <Compile Include="Assets\scripts\breathofthescale.cs" />
-    <Compile Include="Assets\lab5\scripts\HitScript.cs" />
+    <Compile Include="Assets\lab5\scripts\Enemy.cs" />
+    <Compile Include="Assets\lab5\scripts\bullet_behaviour.cs" />
+    <Compile Include="Assets\lab5\scripts\player_health.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
