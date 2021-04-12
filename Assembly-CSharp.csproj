@@ -61,6 +61,7 @@
     <Compile Include="Assets\scripts\color_change.cs" />
     <Compile Include="Assets\scripts\mycube_rot_speed1.cs" />
     <Compile Include="Assets\scripts\breathofthescale.cs" />
+    <Compile Include="Assets\lab5\scripts\HitScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

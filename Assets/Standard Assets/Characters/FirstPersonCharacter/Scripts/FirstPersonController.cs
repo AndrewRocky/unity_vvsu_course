@@ -42,6 +42,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public GameObject m_Bullet;
+        public float m_BulletSpeed;
+        public GameObject m_Box;
+        public float m_BoxSpeed;
+
         // Use this for initialization
         private void Start()
         {
@@ -81,8 +86,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            shoot_rmb();
+            shoot_lmb();
         }
 
+        private void shoot_rmb()
+        {
+            if (Input.GetButtonDown("Fire2"))
+            {
+                Vector3 dir = m_Camera.transform.TransformDirection(Vector3.forward);
+                GameObject shot = Instantiate(m_Bullet);
+                shot.transform.position = m_Camera.transform.position + m_Camera.transform.forward*0.5f;
+                shot.GetComponent<Rigidbody>().AddForce(dir * m_BulletSpeed);
+            }
+        }
+        private void shoot_lmb()
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Vector3 dir = m_Camera.transform.TransformDirection(Vector3.forward);
+                GameObject shot = Instantiate(m_Box);
+                shot.transform.position = m_Camera.transform.position + m_Camera.transform.forward * 0.75f;
+                shot.GetComponent<Rigidbody>().AddForce(dir * m_BoxSpeed);
+            }
+        }
 
         private void PlayLandingSound()
         {
