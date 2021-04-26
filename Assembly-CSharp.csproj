@@ -67,6 +67,7 @@
     <Compile Include="Assets\lab5\scripts\Enemy.cs" />
     <Compile Include="Assets\lab5\scripts\player_health.cs" />
     <Compile Include="Assets\lab5\scripts\menu_manager.cs" />
+    <Compile Include="Assets\lab5\scripts\settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

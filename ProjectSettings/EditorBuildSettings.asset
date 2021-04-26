@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/lab5/main_menu.unity
     guid: b9997b8b0e95aec4aa69edd7364ef62f
+  - enabled: 1
+    path: Assets/lab5/lab5_scene.unity
+    guid: 522eef7bf6e515f4b98187bf61e23ee9
   m_configObjects: {}
