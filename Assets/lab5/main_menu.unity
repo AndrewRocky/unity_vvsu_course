@@ -519,7 +519,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 611752760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44959f4fb7fa26043b78e46cba5f6fe9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f0e4cd941fb78d4893611fb5150b331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemies_count: 10
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1046802986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766b7d592b2ffb14a9b0bb2dbb3843cd, type: 3}
+  m_Script: {fileID: 11500000, guid: b0c1f56fdc416124ab36b6bcabb715b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemies_count: 0

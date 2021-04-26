@@ -74,7 +74,7 @@ public class DungeonMaster_5 : MonoBehaviour
 
     public void return_to_menu()
     {
-        Destroy(settings_script);
+        Destroy(settings_script.gameObject);
         SceneManager.LoadScene("main_menu");
     }
 
